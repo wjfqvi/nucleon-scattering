@@ -1,3 +1,6 @@
+#ifndef SACLAY_H_
+#define SACLAY_H_
+
 #include<complex>
 
 using namespace std;
@@ -12,24 +15,33 @@ public:
 
 	double I0000();
 	double DSG();
-	double P();
-	double D();
+	
 	double AYY();
+	double D();
 	double DT();
+	double P();
+
+	double R();
+	double RP();	
 	double AP();
-	double APT();
+
+	double RT();
 	double AT();
+	double RPT();
+	double APT();
+
+	double D0SK();
+
 	double AXX();
 	double AZX();
 	double AZZ();
-	double D0SK();
-	double NNKK();
-	double NNSK();
+
 	double NSKN();
 	double NSSN();
-	double R();
-	double RP();
-	double RPT();
-	double RT();
+	double NNKK();
+	double NNSK();
+
 	double SGT();
 };
+
+#endif
