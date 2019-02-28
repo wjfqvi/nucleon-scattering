@@ -1,6 +1,8 @@
 #ifndef FUNCTIONS_H_
 #define FUNCTIONS_H_
 
+double elabToKcm(double elab);
+
 double plgndr_s(int l,int m,double x);
 
 double spherHms(int l,int m,double x);

@@ -1,4 +1,5 @@
 #include "saclay.h"
+#include "constant.h"
 
 
 double Saclay::I0000()
@@ -8,7 +9,7 @@ double Saclay::I0000()
 
 double Saclay::DSG()
 {
-	return I0000()*389387.0;
+	return I0000()*MevToBarn;
 }
 
 double Saclay::AYY()

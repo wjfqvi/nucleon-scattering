@@ -1,7 +1,11 @@
 #include<cmath>
+#include "constant.h"
 
 
-const double Pi=3.14;
+double elabToKcm(double elab)
+{
+	return sqrt(mN*elab*0.5);
+}
 
 double plgndr_s(int l,int m,double x)
 {
