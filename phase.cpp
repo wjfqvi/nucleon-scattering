@@ -1,7 +1,9 @@
 #include<complex>
 #include<cmath>
+#include<iostream>
 #include "phase.h"
 #include "functions.h"
+
 
 using namespace std;
 
@@ -46,6 +48,8 @@ complex<double> Phase::mMatrix(int s,int m1,int m2,double acm)
 					*sqrt(2.0*j+1.0)*cg_cff(j,1,j,0,m2);
 
 			mMatrix += mcp + mun;
+
+			cout << j << ' '<<mcp+mun<< endl;
 
 		}
 

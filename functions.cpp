@@ -52,10 +52,10 @@ double spherHms(int l,int m,double x)
 					1.21645e+17,2.4329e+18,5.10909e+19,1.124e+21,2.5852e+22,6.20448e+23,
 					1.55112e+25,4.03291e+26,1.08889e+28,3.04888e+29,8.84176e+30};
 	if(m>=0 && m<=l) {
-		return sqrt((2*l+1.0)*fact[l-m]/(4*Pi*fact[l+m]));//*plgndr_s(l,m,x);
+		return sqrt((2*l+1.0)*fact[l-m]/(4*Pi*fact[l+m]))*plgndr_s(l,m,x);
 	}
 	else if (m<0 && m>=-l){
-		return pow((-1),abs(m))*sqrt((2*l+1)*fact[l-abs(m)]/((4*Pi)*fact[l+abs(m)]));//*plgndr_s(l,abs(m),x);
+		return pow((-1),abs(m))*sqrt((2*l+1)*fact[l-abs(m)]/((4*Pi)*fact[l+abs(m)]))*plgndr_s(l,abs(m),x);
 	}
 }
 
@@ -84,7 +84,7 @@ double cg_cff(int j1, int j2, int j3, int m1, int m2)
 		cg_cff=cg_cff*sqrt(fact[j1+m1]*fact[j1-m1]*fact[j2+m2]*fact[j2-m2]*fact[j3+m3]*fact[j3-m3]);
 		sumk = 0.0;
 		for(int i=0;i<26;i++){
-			if((j1+j2-j3-i)>=0 && (j3-j1-m2+i)>=0 && (j3-j2+m1+i >=0) && (j1-m1-i)>=0 && (j2+m2-k)>=0 ){
+			if((j1+j2-j3-i)>=0 && (j3-j1-m2+i)>=0 && (j3-j2+m1+i >=0) && (j1-m1-i)>=0 && (j2+m2-i)>=0 ){
 				term=fact[j1+j2-j3-i]*fact[j3-j1-m2+i]*fact[j3-j2+m1+i]*fact[j1-m1-i]*fact[j2+m2-i]*fact[i];
 				if(i%2==1) term=-term;
 				sumk = sumk+1.0/term;
@@ -93,5 +93,8 @@ double cg_cff(int j1, int j2, int j3, int m1, int m2)
 		}
 		cg_cff=cg_cff*sumk;
 	}
+
+
+	return cg_cff;
 }
 
